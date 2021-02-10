@@ -20,15 +20,15 @@ body {
     }
 
 /* header */
-    header {grid-area: header; z-index: 1;}
+    header {grid-area: header; z-index: 1; width: var(--w);}
+    header img {width: var(--w);}
 
 /* main */
     main {
         position: relative;
         grid-area: main;
         width: var(--w);
-        margin: 0;
-        margin-top: -0.5vw;
+        margin: -0.5vw 0 0;
     }
 
     #bgmain {
@@ -57,13 +57,17 @@ body {
 
     #dalilife {
         position: relative;
-        margin: 0 6vw;
-        margin-bottom: 20%;
+        margin: 0 5.5vw 20%;
     }
     
-    #timeline{
+    #timeline {
         list-style-type: none;
         padding: 0;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    #timeline li {
+        margin: 0 0.5vw;
     }
 
 /* footer */
@@ -110,7 +114,8 @@ body {
         body {font-size: 1.6em;}
     }
     @media (max-width: 650px) {
-        #dalibg {width: 50%;}   :root {--w: 400px;}
-        #more {margin: 20% 2vw;}
+        #dalibg {width: 50%;}   :root {--w: 450px;}
+        #dalilife {margin: 0 1vw 20%;}
+        #more {margin: 20% 4vw;}
         body {font-size: 1.3em;}
     }
