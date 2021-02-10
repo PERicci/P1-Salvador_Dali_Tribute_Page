@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {--w: 1199px;}
 
 body {
     background-color: #f1edd4;
@@ -6,50 +9,108 @@ body {
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     margin: 0;
     padding: 0;
-
     display: grid;
     grid-template-areas:
     "header"
     "main"
     "footer";
     justify-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
     }
-    header {
-        grid-area: header;
-        z-index: 1;
-    }
-    main {
-        grid-area: main;
-        width: 1199px;
-        height: auto;
-        margin: -0.5vw;
-    }
-    main div {position: relative;}
 
-    #bgmain #bg {width: 100%; height: 100%;}
-    #clock, #dalibg {position: absolute;}
-    #clock {width: 29.44%; right:0;top:5%}
-    #dalibg {width: 32.61%; left: -0.7%; bottom:14%}
-    footer {
-        grid-area: footer;
-        width: 1199px;
-        margin-top: -429px;
-        z-index: 1;
+/* header */
+    header {grid-area: header; z-index: 1;}
+
+/* main */
+    main {
+        position: relative;
+        grid-area: main;
+        width: var(--w);
+        margin: 0;
+        margin-top: -0.5vw;
     }
-    footer img {width: 100%; height: auto;}
+
+    #bgmain {
+        position:absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    #bg {width: 100%; height: 100%;}
+
+    #clock, #dalibg {position: absolute;}
+
+    #clock {
+        height: auto;
+        width: 29.44%;
+        right:0;
+        top: 5%
+    }
+
+    #dalibg {
+        height: auto;
+        width: 32.61%;
+        left: -0.7%;
+        bottom: calc(var(--w)*0.17);
+    }
+
+    #dalilife {
+        position: relative;
+        margin: 0 6vw;
+        margin-bottom: 20%;
+    }
+    
+    #timeline{
+        list-style-type: none;
+        padding: 0;
+    }
+
+/* footer */
+    footer {
+        position: relative;
+        grid-area: footer;
+        width: var(--w);
+        height: calc(var(--w)*0.365);
+        margin: 0;
+        z-index: 1;
+        margin-top: calc(var(--w)*(-0.365));
+    }
+
+    footer img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+
+    #more {position: relative; margin: 25% 10vw;}
+
+    #more ul{
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        row-gap: 1vw;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        justify-items: center;
+    }
+
+/* media queries */
     @media (max-width: 1250px) {
-        main, footer {width: 999px;}
-        footer {margin-top: -359px;}
+        :root {--w: 999px;}
     }
     @media (max-width: 1050px) {
-        main, footer {width: 799px;}
-        footer {margin-top: -285px;}
+        :root {--w: 799px;}
+        #more {margin: 25% 0;}
     }
     @media (max-width: 850px) {
-        main, footer {width: 600px;}
-        footer {margin-top: -214px;}    
+        #dalibg {width: 40%;}   :root {--w: 600px;}
+        #more {margin: 25% 0;}
+        body {font-size: 1.6em;}
     }
     @media (max-width: 650px) {
-        main, footer {width: 400px;}
-        footer {margin-top: -143px;}
+        #dalibg {width: 50%;}   :root {--w: 400px;}
+        #more {margin: 20% 2vw;}
+        body {font-size: 1.3em;}
     }
