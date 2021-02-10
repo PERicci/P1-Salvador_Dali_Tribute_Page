@@ -120,3 +120,9 @@ body {
         #more {margin: 20% 4vw;}
         body {font-size: 1.3em;}
     }
+    @media (max-width: 450px) {
+        #dalibg {width: 50%;}   :root {--w: 350px;}
+        #dalilife {margin: 0 0.5vw 20%;}
+        #more {margin: 20% 3vw;}
+        body {font-size: 1.2em;}
+    }
