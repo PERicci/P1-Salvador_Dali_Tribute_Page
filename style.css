@@ -17,20 +17,26 @@ body {
     justify-items: center;
     font-family: 'Lato', sans-serif;
     font-size: 2em;
-    color: rgb(49, 24, 6);
+    color: rgb(77, 42, 18);
     }
+
+    a {color: #53381c;}
 
 /* header */
     header {grid-area: header; z-index: 1; width: var(--w);}
     header img {width: var(--w);}
 
 /* main */
+    h1, h2, h3, p {margin: 0; padding: 0;}
     main {
         position: relative;
         grid-area: main;
         width: var(--w);
         margin: -0.5vw 0 0;
+        background-image: url(images/bg-big.jpg);
+        background-size: cover;
     }
+    main h2 {position: relative; text-align: center;}
 
     #bgmain {
         position:absolute;
@@ -56,19 +62,49 @@ body {
         bottom: calc(var(--w)*0.17);
     }
 
+    #title {
+        position: absolute;
+        left: -1000px;
+        width: 1px;
+        height: 1px;
+        top: auto;
+        overflow: hidden;
+    }
+
     #dalilife {
         position: relative;
         margin: 0 5.5vw 20%;
+        padding: 0;
     }
     
     #timeline {
         list-style-type: none;
         padding: 0;
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
+        row-gap: 2vw;
     }
     #timeline li {
-        margin: 0 0.5vw;
+        display: flex;
+        column-gap: 2%;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+    .toright {flex-flow: row wrap;}
+    .toleft {flex-flow: row-reverse wrap;}
+
+    .description {flex: 0 1 0; text-align: center; min-width: 70%;}
+    .description h3 {position: relative; text-align: center; padding-bottom: 0.5em;}
+
+    .tlimg {flex: 0 1 auto; height: 18vw; min-height: 200px; min-width: 150px; width: 28%; text-align: center;} 
+    .tlimg img {width: 100%; height: 100%; object-fit: contain; object-position: center;}
+
+    .separator {
+        height: 0.5vh;
+        width: 100%;
+        background: linear-gradient(to right, white 2%, darkgray 50%, white 98%);
+        border-radius: 50%;
     }
 
 /* footer */
@@ -94,9 +130,8 @@ body {
         padding: 0;
         list-style: none;
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
         row-gap: 1vw;
-        flex-wrap: wrap;
         justify-content: space-evenly;
         justify-items: center;
     }
@@ -112,6 +147,8 @@ body {
     @media (max-width: 850px) {
         #dalibg {width: 40%;}   :root {--w: 600px;}
         #more {margin: 25% 0;}
+        #timeline {row-gap: 4vw;}
+        .tlimg {width: 70%; height: 20vw;padding-bottom: 1em;}
         body {font-size: 1.6em;}
     }
     @media (max-width: 650px) {
@@ -120,8 +157,8 @@ body {
         #more {margin: 20% 4vw;}
         body {font-size: 1.3em;}
     }
-    @media (max-width: 450px) {
-        #dalibg {width: 50%;}   :root {--w: 350px;}
+    @media (max-width: 460px) {
+        #dalibg {width: 50%;}   :root {--w: auto;}
         #dalilife {margin: 0 0.5vw 20%;}
         #more {margin: 20% 3vw;}
         body {font-size: 1.2em;}
