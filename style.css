@@ -158,7 +158,7 @@ body {
         body {font-size: 1.3em;}
     }
     @media (max-width: 460px) {
-        #dalibg {width: 50%;}   :root {--w: auto;}
+        #dalibg {width: 50%;}   :root {--w: 400px;}
         #dalilife {margin: 0 0.5vw 20%;}
         #more {margin: 20% 3vw;}
         body {font-size: 1.2em;}
